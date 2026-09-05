@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BUILD_KINDS, DEVICES } from "@/data/aicademy";
+import { BUILD_KINDS, DEVICES, buildChoices, deviceChoices } from "@/data/aicademy";
 import { getPlan, isBuildKind, isDevice } from "@/lib/plan";
 import { PasteBlock } from "../../../components/PasteBlock";
-import { ToolFacts } from "../../../components/ToolFacts";
+import { OpenTool, ToolFacts } from "../../../components/ToolFacts";
 
 export function generateStaticParams() {
   return BUILD_KINDS.flatMap((build) => DEVICES.map((device) => ({ build, device })));
@@ -38,11 +38,16 @@ export default async function PlanPage({
   const broke = plan.tips[1];
   const credits = plan.tips[2];
   const publish = plan.tips[3];
+  const buildLabel = buildChoices.find((item) => item.id === build)?.label;
+  const deviceLabel = deviceChoices.find((item) => item.id === device)?.label;
 
   return (
     <main id="main">
       <p className="progress">
         <b>Plan</b>
+      </p>
+      <p className="quiet mt-2 text-sm">
+        {buildLabel}. {deviceLabel}.
       </p>
       <h1 className="display mt-2 text-[2.35rem] leading-[1.08] sm:text-5xl">
         {plan.project.title}
@@ -105,11 +110,9 @@ export default async function PlanPage({
           <p className="note mt-4 leading-relaxed">{plan.nextTool.warning}</p>
         ) : null}
         <p className="body quiet mt-3">{credits.body}</p>
-        <p className="mt-4">
-          <a className="link font-bold" href={plan.nextTool.url} rel="noreferrer" target="_blank">
-            Open {plan.nextTool.name}
-          </a>
-        </p>
+        <div className="mt-4">
+          <OpenTool name={plan.nextTool.name} url={plan.nextTool.url} />
+        </div>
       </section>
 
       <p className="mt-12 flex flex-col gap-3 sm:flex-row sm:gap-6">

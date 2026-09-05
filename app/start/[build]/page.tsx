@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BUILD_KINDS, buildChoices, deviceChoices } from "@/data/aicademy";
@@ -7,6 +8,10 @@ import { ChoiceLink, Progress } from "../../components/ChoiceLink";
 export function generateStaticParams() {
   return BUILD_KINDS.map((build) => ({ build }));
 }
+
+export const metadata: Metadata = {
+  title: "Where are you working today?",
+};
 
 export default async function StartBuildPage({
   params,
@@ -18,7 +23,7 @@ export default async function StartBuildPage({
     notFound();
   }
 
-  const chosenLabel = buildChoices.find((item) => item.id === build)?.label?.toLowerCase();
+  const chosenLabel = buildChoices.find((item) => item.id === build)?.label;
 
   return (
     <main id="main">
@@ -27,7 +32,7 @@ export default async function StartBuildPage({
         Where are you working today?
       </h1>
       <p className="body quiet mt-3">
-        For {chosenLabel}, this only changes which tool we start with.
+        You picked {chosenLabel}. This only changes which tool we start with.
       </p>
       <ul className="mt-7 grid gap-2.5">
         {deviceChoices.map((choice) => (

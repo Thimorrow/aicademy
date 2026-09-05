@@ -45,8 +45,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
           <footer className="site-foot quiet mt-16 border-t border-line pt-5 text-sm">
             <p>
-              Free plans change. The date on each tool is when we last checked. This is not
-              legal advice. No login on this site.
+              Free plans change. The date on each tool is when we last checked. No login on
+              this site.
             </p>
           </footer>
         </div>

@@ -74,7 +74,7 @@ export const tools: Tool[] = [
     paymentNote: "No payment card needed for the free plan.",
     devices: ["computer", "phone"],
     stage: 1,
-    source: "https://bolt.new",
+    source: "https://bolt.new/pricing",
     sourceLabel: "Bolt pricing page",
     checkedOn: CHECKED_ON,
   },
@@ -97,7 +97,7 @@ export const tools: Tool[] = [
     id: "v0",
     name: "v0",
     url: "https://v0.app",
-    goodFor: "A first look for a website or app. You describe a screen. It draws it. You can keep changing the look.",
+    goodFor: "A first look for a website or app. You describe a screen. It draws a picture of it. That is not yet a page people can open on the internet.",
     freeInWords:
       "You get a little free credit each month, about the price of a cheap lunch. Fine for a first afternoon, not for endless retries.",
     needsPaymentMethod: false,
@@ -127,7 +127,7 @@ export const tools: Tool[] = [
     id: "google-ai-studio",
     name: "Google AI Studio",
     url: "https://aistudio.google.com",
-    goodFor: "Talking to Google’s AI in the browser. Also the place to get a free Google key later, if you move to a helper on your computer.",
+    goodFor: "Talking to Google’s AI in the browser. Another free place to ask questions and paste text, not a place that publishes a website.",
     freeInWords:
       "You can use it in the browser for free. Google can still cap how much you use in a day.",
     needsPaymentMethod: false,
@@ -344,16 +344,16 @@ export const tips: Tip[] = [
 ];
 
 export const routes: Route[] = [
-  { build: "website", device: "computer", toolId: "bolt", projectId: "one-page", nextToolId: "kilo" },
-  { build: "website", device: "phone", toolId: "lovable", projectId: "one-page", nextToolId: "google-ai-studio" },
-  { build: "app", device: "computer", toolId: "lovable", projectId: "simple-list", nextToolId: "kilo" },
-  { build: "app", device: "phone", toolId: "lovable", projectId: "simple-list", nextToolId: "google-ai-studio" },
-  { build: "game", device: "computer", toolId: "bolt", projectId: "tiny-quiz", nextToolId: "kilo" },
-  { build: "game", device: "phone", toolId: "bolt", projectId: "tiny-quiz", nextToolId: "chatgpt" },
+  { build: "website", device: "computer", toolId: "bolt", projectId: "one-page", nextToolId: "lovable" },
+  { build: "website", device: "phone", toolId: "lovable", projectId: "one-page", nextToolId: "bolt" },
+  { build: "app", device: "computer", toolId: "lovable", projectId: "simple-list", nextToolId: "bolt" },
+  { build: "app", device: "phone", toolId: "lovable", projectId: "simple-list", nextToolId: "bolt" },
+  { build: "game", device: "computer", toolId: "bolt", projectId: "tiny-quiz", nextToolId: "replit" },
+  { build: "game", device: "phone", toolId: "bolt", projectId: "tiny-quiz", nextToolId: "lovable" },
   { build: "automate", device: "computer", toolId: "chatgpt", projectId: "reply-helper", nextToolId: "google-ai-studio" },
   { build: "automate", device: "phone", toolId: "chatgpt", projectId: "reply-helper", nextToolId: "google-ai-studio" },
-  { build: "unsure", device: "computer", toolId: "bolt", projectId: "about-you", nextToolId: "kilo" },
-  { build: "unsure", device: "phone", toolId: "lovable", projectId: "about-you", nextToolId: "google-ai-studio" },
+  { build: "unsure", device: "computer", toolId: "bolt", projectId: "about-you", nextToolId: "lovable" },
+  { build: "unsure", device: "phone", toolId: "lovable", projectId: "about-you", nextToolId: "bolt" },
 ];
 
 export const buildChoices: { id: BuildKind; label: string; hint: string }[] = [

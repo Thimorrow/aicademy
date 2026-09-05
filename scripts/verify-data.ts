@@ -25,6 +25,9 @@ for (const tool of tools) {
   assert.ok(tool.checkedOn);
   const blob = `${tool.goodFor} ${tool.freeInWords} ${tool.paymentNote} ${tool.warning ?? ""}`;
   assert.ok(!/stack|api key|repo|terminal/i.test(blob), `jargon in ${tool.id}: ${blob}`);
+  if (tool.stage === 1) {
+    assert.ok(!/\bkey\b/i.test(blob), `stage 1 must not say key: ${tool.id}`);
+  }
 }
 
 assert.equal(projects.length, 5);
@@ -38,10 +41,16 @@ for (const build of BUILD_KINDS) {
     const tool = toolById(route.toolId);
     const nextTool = toolById(route.nextToolId);
     const project = projectById(route.projectId);
+    assert.ok(tool.stage === 1, `first tool must be browser-only: ${tool.id}`);
+    assert.ok(nextTool.stage === 1, `next tool must stay in the browser: ${build} ${device} -> ${nextTool.id}`);
     assert.ok(tool.devices.includes(device), `${tool.id} cannot run on ${device}`);
+    assert.ok(nextTool.devices.includes(device), `${nextTool.id} cannot run on ${device}`);
     assert.ok(project.title);
     assert.ok(project.paste.length > 20);
-    assert.ok(nextTool.id);
+    const builders = new Set(["bolt", "lovable", "replit"]);
+    if (build !== "automate") {
+      assert.ok(builders.has(nextTool.id), `page plans need a builder next: ${build} ${device} -> ${nextTool.id}`);
+    }
   }
 }
 

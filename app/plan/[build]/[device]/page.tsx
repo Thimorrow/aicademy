@@ -67,13 +67,13 @@ export default async function PlanPage({
       </section>
 
       <section className="mt-12">
-        <h2 className="display text-2xl">Then</h2>
+        <h2 className="display text-2xl">After you paste</h2>
         <ol className="mt-5 space-y-5">
           {plan.project.steps.slice(2).map((step, index) => (
             <li key={step}>
               <div className="flex gap-4">
                 <span className="step-num display w-7 shrink-0 text-[1.65rem] leading-none text-mark">
-                  {index + 3}
+                  {index + 1}
                 </span>
                 <p className="body">{step}</p>
               </div>

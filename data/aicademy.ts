@@ -52,6 +52,7 @@ export type Tip = {
     | "plan-broke"
     | "plan-credits"
     | "plan-publish"
+  builds?: BuildKind[]
 };
 
 export type Route = {
@@ -322,10 +323,31 @@ export const tips: Tip[] = [
     body: "A yellow page with my name and a button that shows a photo is better than make a website. Name the colors, the words on the button, and what should happen next.",
   },
   {
+    id: "describe-game",
+    place: "plan-describe",
+    builds: ["game"],
+    title: "Say what a right and wrong answer does.",
+    body: "A five-question quiz about dogs, with a score at the end, is better than make a game. Name the topic, how many questions, and what happens when someone picks the wrong answer.",
+  },
+  {
+    id: "describe-helper",
+    place: "plan-describe",
+    builds: ["automate"],
+    title: "Paste a real message. Say who it is for.",
+    body: "Write a short kind reply to this message from my teacher is better than make a helper. Name the person, the tone, and which words to avoid.",
+  },
+  {
     id: "broke",
     place: "plan-broke",
     title: "If it breaks, name the broken bit.",
     body: "Do not say fix it. Say the button is too small and the text is cut off. If the next try makes it worse, ask it to undo the last change only.",
+  },
+  {
+    id: "broke-helper",
+    place: "plan-broke",
+    builds: ["automate"],
+    title: "If the reply is wrong, name the sentence.",
+    body: "Do not say fix it. Say the second sentence is too stiff, and it should sound like a friend. If the next try is worse, ask it to undo the last change only.",
   },
   {
     id: "credits",
@@ -338,6 +360,13 @@ export const tips: Tip[] = [
     place: "plan-publish",
     title: "Put it on the internet with the share button.",
     body: "You do not need to buy hosting for the first version. Look for Share, Publish, or Public. Copy the link. Open it on your phone. If it asks you to log in to see the page, ask the tool to make the page public.",
+  },
+  {
+    id: "publish-helper",
+    place: "plan-publish",
+    builds: ["automate"],
+    title: "Save the reply in a note. You are not publishing a page.",
+    body: "Copy the reply you would actually send into a note or an email draft. You do not need a share button or a website for this first project.",
   },
 ];
 
@@ -383,8 +412,13 @@ export function projectById(id: string): FirstProject {
   return project;
 }
 
-export function tipByPlace(place: Tip["place"]): Tip {
-  const tip = tips.find((item) => item.place === place);
+export function tipByPlace(place: Tip["place"], build?: BuildKind): Tip {
+  const specific =
+    build === undefined
+      ? undefined
+      : tips.find((item) => item.place === place && item.builds?.includes(build));
+  const general = tips.find((item) => item.place === place && !item.builds);
+  const tip = specific ?? general;
   if (!tip) {
     throw new Error(`Unknown tip place: ${place}`);
   }

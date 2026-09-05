@@ -42,10 +42,10 @@ export function getPlan(build: BuildKind, device: Device): Plan {
     project: projectById(route.projectId),
     nextTool: toolById(route.nextToolId),
     tips: [
-      tipByPlace("plan-describe"),
-      tipByPlace("plan-broke"),
-      tipByPlace("plan-credits"),
-      tipByPlace("plan-publish"),
+      tipByPlace("plan-describe", build),
+      tipByPlace("plan-broke", build),
+      tipByPlace("plan-credits", build),
+      tipByPlace("plan-publish", build),
     ],
   };
 }

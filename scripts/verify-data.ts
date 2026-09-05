@@ -31,8 +31,17 @@ for (const tool of tools) {
 }
 
 assert.equal(projects.length, 5);
-assert.equal(tips.length, 5);
+assert.ok(tips.length >= 5);
 assert.equal(routes.length, BUILD_KINDS.length * DEVICES.length);
+
+const planPlaces = ["plan-describe", "plan-broke", "plan-credits", "plan-publish"] as const;
+for (const build of BUILD_KINDS) {
+  for (const place of planPlaces) {
+    const specific = tips.find((item) => item.place === place && item.builds?.includes(build));
+    const general = tips.find((item) => item.place === place && !item.builds);
+    assert.ok(specific ?? general, `missing tip ${place} for ${build}`);
+  }
+}
 
 for (const build of BUILD_KINDS) {
   for (const device of DEVICES) {

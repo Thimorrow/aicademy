@@ -48,7 +48,7 @@ export function ToolFacts({
         Works on {deviceLabel}. Checked {tool.checkedOn}.
       </p>
       <p className="mt-1">
-        <a className="link tap" href={tool.source} rel="noreferrer" target="_blank">
+        <a className="link source" href={tool.source} rel="noreferrer" target="_blank">
           Source: {tool.sourceLabel}
         </a>
       </p>

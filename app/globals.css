@@ -265,6 +265,13 @@ h3 {
   min-height: 2.75rem;
 }
 
+.source {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
 .btn-quiet {
   background: transparent;
   color: var(--color-ink);

@@ -157,18 +157,16 @@ export const tools: Tool[] = [
     id: "kilo",
     name: "Kilo Code",
     url: "https://kilo.ai",
-    goodFor: "The next step after the browser tools run out. A free helper that lives in a code editor on your computer. You bring your own free Google key. Kilo does not add a markup on that key.",
+    goodFor: "The next step after the browser tools run out. A free helper in a writing app on your computer. Not the first stop.",
     freeInWords:
-      "The helper itself is free. You use a free Google key from Google AI Studio. Do not take Kilo’s own starter credit. That one asks for a payment card.",
+      "The helper itself is free if you sign in with a free Google account from Google AI Studio.",
     needsPaymentMethod: false,
-    paymentNote: "Skip the starter credit. Use your own free Google key. No card for that path.",
+    paymentNote: "Skip the starter offer. It asks for a payment card.",
     devices: ["computer"],
     stage: 2,
     source: "https://kilo.ai",
     sourceLabel: "Kilo Code site",
     checkedOn: CHECKED_ON,
-    warning:
-      "If Kilo offers about 20 dollars of starter credit, do not take it. It asks for a payment card. Make a free Google key in Google AI Studio and use that instead.",
   },
   {
     id: "copilot",
@@ -236,7 +234,7 @@ export const projects: FirstProject[] = [
   {
     id: "one-page",
     build: "website",
-    title: "A one-page site about something you care about",
+    title: "A one-page site you can share tonight",
     whyFun: "By tonight you can send someone a link. That is a real thing on the internet, made by you.",
     steps: [
       "Open the tool in this plan. Make a free account if it asks.",

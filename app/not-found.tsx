@@ -12,11 +12,11 @@ export default function NotFound() {
       <p className="body quiet mt-4">
         Two questions still get you a first project. Or look at the tools.
       </p>
-      <p className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-6">
+      <p className="mt-6 flex flex-col gap-3 sm:flex-row">
         <Link className="btn" href="/">
           Start
         </Link>
-        <Link className="link tap self-center" href="/tools">
+        <Link className="btn btn-quiet" href="/tools">
           Tools
         </Link>
       </p>

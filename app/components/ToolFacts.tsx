@@ -41,11 +41,12 @@ export function ToolFacts({
         </div>
       ) : null}
       <p className="quiet mt-3 text-sm">
-        Works on {deviceLabel}. Checked {tool.checkedOn}. Source:{" "}
-        <a className="link" href={tool.source} rel="noreferrer" target="_blank">
-          {tool.sourceLabel}
+        Works on {deviceLabel}. Checked {tool.checkedOn}.
+      </p>
+      <p className="mt-1">
+        <a className="link tap" href={tool.source} rel="noreferrer" target="_blank">
+          Source: {tool.sourceLabel}
         </a>
-        .
       </p>
     </div>
   );

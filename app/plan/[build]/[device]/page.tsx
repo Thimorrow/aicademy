@@ -46,19 +46,24 @@ export default async function PlanPage({
       <p className="progress">
         <b>Plan</b>
       </p>
-      <p className="quiet mt-2 text-sm">
-        {buildLabel}. {deviceLabel}.
+      <p className="quiet mt-2 flex flex-wrap items-center justify-between gap-x-4 text-sm">
+        <span>
+          {buildLabel}. {deviceLabel}.
+        </span>
+        <Link className="link tap" href="/">
+          Start over
+        </Link>
       </p>
-      <h1 className="display mt-2 text-[2.35rem] sm:text-5xl">
+      <h1 className="display mt-2 text-[1.85rem] sm:text-5xl">
         {plan.project.title}
       </h1>
-      <p className="body mt-3 text-lg">{plan.project.whyFun}</p>
+      <p className="body mt-3">{plan.project.whyFun}</p>
 
       <section className="mt-6">
         <h2 className="display text-2xl">Start with {plan.tool.name}</h2>
         <div className="mt-3">
           <OpenTool
-            hint="Opens a new page. Copy the words below, then paste them there."
+            hint="Opens a new page. Paste the words below."
             name={plan.tool.name}
             url={plan.tool.url}
           />

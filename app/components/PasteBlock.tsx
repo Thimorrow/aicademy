@@ -23,13 +23,13 @@ export function PasteBlock({ text }: { text: string }) {
       {text.includes("[") ? (
         <p className="quiet mt-1 text-sm">Replace the words in [brackets] with yours, then copy.</p>
       ) : null}
-      <pre className="paste mt-2">{text}</pre>
       <button aria-live="polite" className="btn btn-copy mt-3" onClick={copy} type="button">
         {label}
       </button>
       {status === "failed" ? (
-        <p className="quiet mt-2 text-sm">Select the words above and copy them yourself.</p>
+        <p className="quiet mt-2 text-sm">Select the words below and copy them yourself.</p>
       ) : null}
+      <pre className="paste mt-3">{text}</pre>
     </div>
   );
 }

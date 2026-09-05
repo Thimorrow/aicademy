@@ -35,6 +35,9 @@ html {
 
 body {
   min-height: 100dvh;
+  padding-block: 0.5rem;
+  padding-inline: max(0.5rem, env(safe-area-inset-left)) max(0.5rem, env(safe-area-inset-right));
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
   color: var(--color-ink);
   background-color: var(--color-paper-2);
   font-family: var(--font-sans);
@@ -64,12 +67,13 @@ body {
   position: relative;
   width: min(42rem, 100%);
   margin-inline: auto;
-  min-height: 100dvh;
+  min-height: calc(100dvh - 1rem);
   padding-block: 1.25rem 2rem;
-  padding-inline: max(1.15rem, env(safe-area-inset-left)) max(1.35rem, env(safe-area-inset-right));
+  padding-inline: 1.15rem 1.35rem;
   isolation: isolate;
   background-color: oklch(0.985 0.01 95);
   box-shadow: var(--elevation-sheet);
+  border-radius: 2px;
 }
 
 .sheet::before {
@@ -96,11 +100,19 @@ h3 {
 
 @media (min-width: 40rem) {
   .sheet {
-    padding-inline: max(1.5rem, env(safe-area-inset-left)) max(2rem, env(safe-area-inset-right));
+    padding-inline: 1.5rem 2rem;
   }
 
   .sheet::before {
     inset-inline-start: 3rem;
+  }
+
+  .paste {
+    max-height: none;
+  }
+
+  .btn-copy {
+    width: auto;
   }
 }
 
@@ -213,6 +225,7 @@ h3 {
 
 .btn-copy {
   min-width: 11.5rem;
+  width: 100%;
 }
 
 .note {
@@ -222,20 +235,33 @@ h3 {
 }
 
 .panel {
-  border: 1px solid var(--color-line);
+  border: 0;
   border-radius: 2px;
   background: var(--color-card);
   padding: 1.1rem 1.15rem;
+  box-shadow: var(--elevation-choice);
 }
 
 .paste {
   margin: 0;
+  max-height: 8.5rem;
+  overflow: auto;
   white-space: pre-wrap;
   overflow-wrap: break-word;
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.5;
   color: var(--color-ink);
+}
+
+.paste::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.paste::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 .quiet {

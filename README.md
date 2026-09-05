@@ -12,4 +12,6 @@ npm run dev
 
 Tool facts live in `data/aicademy.ts`. Change a tool there, nowhere else.
 
+Live: https://aicademy-mu.vercel.app
+
 The design notes live in `.ytstack/`.

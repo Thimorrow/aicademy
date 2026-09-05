@@ -38,6 +38,7 @@ export type FirstProject = {
   title: string
   whyFun: string
   steps: string[]
+  paste: string
   doneWhen: string
 };
 
@@ -239,10 +240,12 @@ export const projects: FirstProject[] = [
     whyFun: "By tonight you can send someone a link. That is a real thing on the internet, made by you.",
     steps: [
       "Open the tool in this plan. Make a free account if it asks.",
-      "Paste this: Make a simple one-page website about [your topic]. Big title, a short story, one photo placeholder, and a button that says Contact me and scrolls to an email line at the bottom. Calm colors. Easy to read on a phone.",
+      "Paste the words in the box below.",
       "Change the title and the story to your words. If a photo is missing, ask it to use a colored block with a label instead.",
       "Press the share or publish button. Copy the link.",
     ],
+    paste:
+      "Make a simple one-page website about [your topic]. Big title, a short story, one photo placeholder, and a button that says Contact me and scrolls to an email line at the bottom. Calm colors. Easy to read on a phone.",
     doneWhen: "You can open the link on your phone and read the page without logging in.",
   },
   {
@@ -252,10 +255,12 @@ export const projects: FirstProject[] = [
     whyFun: "A packing list, a shopping list, or a homework list. You use it the same day.",
     steps: [
       "Open the tool in this plan. Make a free account if it asks.",
-      "Paste this: Make a simple list app. I can add a line, check it off, and delete it. Save the list on this device. Big buttons. Easy on a phone. No login.",
+      "Paste the words in the box below.",
       "Add three real items. Check one off. Delete one. If that fails, tell the tool exactly which tap did nothing.",
       "Press the share or publish button. Copy the link.",
     ],
+    paste:
+      "Make a simple list app. I can add a line, check it off, and delete it. Save the list on this device. Big buttons. Easy on a phone. No login.",
     doneWhen: "You can add, check, and delete a line, then refresh the page and still see your list.",
   },
   {
@@ -265,10 +270,12 @@ export const projects: FirstProject[] = [
     whyFun: "You can send it to a friend and watch them guess. That is a game, even if it is small.",
     steps: [
       "Open the tool in this plan. Make a free account if it asks.",
-      "Paste this: Make a quiz with five questions about [your topic]. One question at a time, four answers, a score at the end, a play again button. Big text. Works on a phone.",
+      "Paste the words in the box below.",
       "Play it once. If a wrong answer is marked right, say which question and what should happen.",
       "Press the share or publish button. Copy the link.",
     ],
+    paste:
+      "Make a quiz with five questions about [your topic]. One question at a time, four answers, a score at the end, a play again button. Big text. Works on a phone.",
     doneWhen: "You can finish the quiz, see a score, and play again.",
   },
   {
@@ -278,10 +285,12 @@ export const projects: FirstProject[] = [
     whyFun: "You paste a message. It writes a kind reply you can copy. Useful the same afternoon.",
     steps: [
       "Open the tool in this plan. Make a free account if it asks.",
-      "Paste this: I will paste a message. Write a short, kind reply in plain words. Give me three tones: warm, short, and careful. Do not send anything. I will copy the text myself.",
+      "Paste the words in the box below.",
       "Paste one real message you would answer. Pick the reply you like. If the tone is wrong, say which words to change.",
       "Save the three tones as a note so you can paste this helper again tomorrow.",
     ],
+    paste:
+      "I will paste a message. Write a short, kind reply in plain words. Give me three tones: warm, short, and careful. Do not send anything. I will copy the text myself.",
     doneWhen: "You have a reply you would actually send, copied into a note or email draft.",
   },
   {
@@ -291,10 +300,12 @@ export const projects: FirstProject[] = [
     whyFun: "If you do not know what to build yet, this is the smallest honest first thing. A page with your name and one thing you like.",
     steps: [
       "Open the tool in this plan. Make a free account if it asks.",
-      "Paste this: Make a simple page with my name, one sentence about me, a list of three things I like, and a button that shows a surprise sentence. Easy to read. Works on a phone.",
+      "Paste the words in the box below.",
       "Put your real name and three true likes. If the surprise button does nothing, say so and ask it to fix only that button.",
       "Press the share or publish button. Copy the link.",
     ],
+    paste:
+      "Make a simple page with my name, one sentence about me, a list of three things I like, and a button that shows a surprise sentence. Easy to read. Works on a phone.",
     doneWhen: "You can open the link and tap the button, and the surprise sentence appears.",
   },
 ];

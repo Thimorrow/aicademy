@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BUILD_KINDS, buildChoices, deviceChoices } from "@/data/aicademy";
 import { isBuildKind } from "@/lib/plan";
+import { ChoiceLink, Progress } from "../../components/ChoiceLink";
 
 export function generateStaticParams() {
   return BUILD_KINDS.map((build) => ({ build }));
@@ -17,32 +18,30 @@ export default async function StartBuildPage({
     notFound();
   }
 
-  const chosenLabel = buildChoices.find((item) => item.id === build)?.label;
+  const chosenLabel = buildChoices.find((item) => item.id === build)?.label?.toLowerCase();
 
   return (
-    <main id="main" className="pb-16">
-      <p className="text-sm text-mute">Question 2 of 2</p>
-      <h1 className="display mt-2 text-4xl leading-tight text-balance sm:text-5xl">
+    <main id="main">
+      <Progress step={2} />
+      <h1 className="display mt-2 text-[2.35rem] leading-[1.08] sm:text-5xl">
         Where are you working today?
       </h1>
-      <p className="mt-4 max-w-xl text-mute">
-        You want {chosenLabel?.toLowerCase()}. That only changes which tool we start with.
+      <p className="body quiet mt-3">
+        For {chosenLabel}, this only changes which tool we start with.
       </p>
-      <ul className="mt-8 grid gap-3">
+      <ul className="mt-7 grid gap-2.5">
         {deviceChoices.map((choice) => (
           <li key={choice.id}>
-            <Link
-              className="choice flex flex-col rounded-2xl border border-line bg-card px-5 py-4 hover:border-mark"
+            <ChoiceLink
               href={`/plan/${build}/${choice.id}`}
-            >
-              <span className="text-lg font-bold">{choice.label}</span>
-              <span className="mt-1 text-mute">{choice.hint}</span>
-            </Link>
+              hint={choice.hint}
+              title={choice.label}
+            />
           </li>
         ))}
       </ul>
       <p className="mt-8">
-        <Link className="text-mute hover:text-ink" href="/start">
+        <Link className="link" href="/">
           Back. Pick a different thing to build.
         </Link>
       </p>

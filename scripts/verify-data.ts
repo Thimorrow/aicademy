@@ -40,6 +40,7 @@ for (const build of BUILD_KINDS) {
     const project = projectById(route.projectId);
     assert.ok(tool.devices.includes(device), `${tool.id} cannot run on ${device}`);
     assert.ok(project.title);
+    assert.ok(project.paste.length > 20);
     assert.ok(nextTool.id);
   }
 }

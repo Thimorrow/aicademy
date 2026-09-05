@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Atkinson_Hyperlegible, Fraunces } from "next/font/google";
-import Link from "next/link";
+import { Header } from "./components/Header";
 import "./globals.css";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
+  axes: ["WONK", "SOFT"],
   variable: "--font-fraunces",
   display: "swap",
 });
@@ -17,42 +18,36 @@ const atkinson = Atkinson_Hyperlegible({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://aicademy-mu.vercel.app"),
   title: {
     default: "aicademy",
     template: "%s · aicademy",
   },
   description:
     "Build something real with AI when you have no money, no payment method, and no idea how to code.",
+  openGraph: {
+    title: "aicademy",
+    description: "Two questions. A first project for this afternoon. No money needed.",
+    locale: "en",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${fraunces.variable} ${atkinson.variable}`}>
-      <body className="relative">
-        <a className="skip rounded-md bg-mark px-3 py-2 text-paper" href="#main">
+      <body>
+        <a className="skip btn" href="#main">
           Skip to content
         </a>
-        <div className="relative z-10 mx-auto flex min-h-dvh max-w-3xl flex-col px-5 py-6 sm:px-8">
-          <header className="flex items-baseline justify-between gap-4 pb-8">
-            <Link className="display text-2xl tracking-tight" href="/">
-              aicademy
-            </Link>
-            <nav className="flex gap-5 text-sm text-mute">
-              <Link className="hover:text-ink" href="/start">
-                Start
-              </Link>
-              <Link className="hover:text-ink" href="/tools">
-                Tools
-              </Link>
-            </nav>
-          </header>
+        <div className="sheet">
+          <Header />
           {children}
-          <footer className="mt-auto border-t border-line pt-6 pb-4 text-sm text-mute">
+          <footer className="quiet mt-16 border-t border-line pt-5 text-sm">
             <p>
               Free plans change. The date on each tool is when we last checked. This is not
-              legal advice.
+              legal advice. No login on this site.
             </p>
-            <p className="mt-2">No paid tools. No login on this site. English only.</p>
           </footer>
         </div>
       </body>

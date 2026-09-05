@@ -3,7 +3,7 @@ import { buildChoices, tipByPlace } from "@/data/aicademy";
 import { ChoiceLink, Progress } from "./components/ChoiceLink";
 
 export const metadata: Metadata = {
-  title: "aicademy",
+  title: "What do you want to build?",
 };
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
         card, or any coding.
       </p>
       <Progress step={1} />
-      <h1 className="display mt-2 text-[2.35rem] leading-[1.08] sm:text-5xl">
+      <h1 className="display mt-2 text-[2.35rem] sm:text-5xl">
         What do you want to build?
       </h1>
       <ul className="mt-7 grid gap-2.5">

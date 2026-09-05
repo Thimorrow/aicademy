@@ -28,7 +28,7 @@ export default async function StartBuildPage({
   return (
     <main id="main">
       <Progress step={2} />
-      <h1 className="display mt-2 text-[2.35rem] leading-[1.08] sm:text-5xl">
+      <h1 className="display mt-2 text-[2.35rem] sm:text-5xl">
         Where are you working today?
       </h1>
       <p className="body quiet mt-3">

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export function Header() {
   const path = usePathname();
-  const startCurrent = path === "/" || path.startsWith("/start") || path.startsWith("/plan");
+  const startCurrent = path === "/" || path.startsWith("/start");
   const toolsCurrent = path.startsWith("/tools");
 
   return (

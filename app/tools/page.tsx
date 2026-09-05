@@ -13,7 +13,7 @@ const stageTitle = {
 export default function ToolsPage() {
   return (
     <main id="main">
-      <h1 className="display text-[2.35rem] leading-[1.08] sm:text-5xl">The tools</h1>
+      <h1 className="display text-[2.35rem] sm:text-5xl">The tools</h1>
       <p className="body quiet mt-4 text-lg">
         A short list we can actually check. Each one says what is free, whether you need a
         payment card, where we read that, and when.

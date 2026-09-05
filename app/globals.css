@@ -110,6 +110,7 @@ h3 {
   font-optical-sizing: auto;
   font-variation-settings: "WONK" 1, "SOFT" 40;
   letter-spacing: -0.02em;
+  line-height: 1.22;
   text-wrap: balance;
 }
 

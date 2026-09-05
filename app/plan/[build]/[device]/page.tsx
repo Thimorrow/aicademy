@@ -49,15 +49,19 @@ export default async function PlanPage({
       <p className="quiet mt-2 text-sm">
         {buildLabel}. {deviceLabel}.
       </p>
-      <h1 className="display mt-2 text-[2.35rem] leading-[1.08] sm:text-5xl">
+      <h1 className="display mt-2 text-[2.35rem] sm:text-5xl">
         {plan.project.title}
       </h1>
       <p className="body mt-4 text-lg">{plan.project.whyFun}</p>
 
-      <section className="panel mt-10">
+      <section className="mt-8">
         <h2 className="display text-2xl">Start with {plan.tool.name}</h2>
-        <div className="mt-3">
-          <ToolFacts tool={plan.tool} />
+        <div className="mt-4">
+          <OpenTool
+            hint="Opens a new page. Come back here for the words to paste."
+            name={plan.tool.name}
+            url={plan.tool.url}
+          />
         </div>
       </section>
 
@@ -81,6 +85,13 @@ export default async function PlanPage({
       <section className="note mt-12">
         <h2 className="display text-2xl">You are done when</h2>
         <p className="body mt-2 text-lg">{plan.project.doneWhen}</p>
+      </section>
+
+      <section className="panel mt-12">
+        <h2 className="display text-2xl">About {plan.tool.name}</h2>
+        <div className="mt-3">
+          <ToolFacts showOpen={false} tool={plan.tool} />
+        </div>
       </section>
 
       <section className="mt-12">

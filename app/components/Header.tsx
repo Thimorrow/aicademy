@@ -9,8 +9,8 @@ export function Header() {
   const toolsCurrent = path.startsWith("/tools");
 
   return (
-    <header className="flex items-baseline justify-between gap-4 pb-10">
-      <Link className="display text-[1.65rem] leading-none" href="/">
+    <header className="flex items-center justify-between gap-4 pb-10">
+      <Link className="brand display text-[1.65rem] leading-none" href="/">
         aicademy
       </Link>
       <nav className="nav flex gap-5 text-sm text-mute">

@@ -11,7 +11,7 @@ export default function NotFound() {
         <Link className="btn" href="/">
           Start
         </Link>
-        <Link className="link self-center" href="/tools">
+        <Link className="link tap self-center" href="/tools">
           Tools
         </Link>
       </p>

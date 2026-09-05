@@ -127,7 +127,7 @@ export const tools: Tool[] = [
     id: "google-ai-studio",
     name: "Google AI Studio",
     url: "https://aistudio.google.com",
-    goodFor: "Talking to Google's AI in the browser. Also the place to get a free Google key later, if you move to a helper on your computer.",
+    goodFor: "Talking to Google’s AI in the browser. Also the place to get a free Google key later, if you move to a helper on your computer.",
     freeInWords:
       "You can use it in the browser for free. Google can still cap how much you use in a day.",
     needsPaymentMethod: false,
@@ -159,7 +159,7 @@ export const tools: Tool[] = [
     url: "https://kilo.ai",
     goodFor: "The next step after the browser tools run out. A free helper that lives in a code editor on your computer. You bring your own free Google key. Kilo does not add a markup on that key.",
     freeInWords:
-      "The helper itself is free. You use a free Google key from Google AI Studio. Do not take Kilo's own starter credit. That one asks for a payment card.",
+      "The helper itself is free. You use a free Google key from Google AI Studio. Do not take Kilo’s own starter credit. That one asks for a payment card.",
     needsPaymentMethod: false,
     paymentNote: "Skip the starter credit. Use your own free Google key. No card for that path.",
     devices: ["computer"],

@@ -41,7 +41,7 @@ export default async function StartBuildPage({
         ))}
       </ul>
       <p className="mt-8">
-        <Link className="link" href="/">
+        <Link className="link tap" href="/">
           Back. Pick a different thing to build.
         </Link>
       </p>

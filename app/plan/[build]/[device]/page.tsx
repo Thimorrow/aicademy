@@ -62,7 +62,7 @@ export default async function PlanPage({
           {plan.project.steps.map((step, index) => (
             <li key={step}>
               <div className="flex gap-4">
-                <span className="display w-7 shrink-0 text-[1.65rem] leading-none text-mark">
+                <span className="step-num display w-7 shrink-0 text-[1.65rem] leading-none text-mark">
                   {index + 1}
                 </span>
                 <p className="body">{step}</p>
@@ -113,10 +113,10 @@ export default async function PlanPage({
       </section>
 
       <p className="mt-12 flex flex-col gap-3 sm:flex-row sm:gap-6">
-        <Link className="link" href="/">
+        <Link className="link tap" href="/">
           Start over
         </Link>
-        <Link className="link" href="/tools">
+        <Link className="link tap" href="/tools">
           See every tool
         </Link>
       </p>

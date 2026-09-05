@@ -6,13 +6,17 @@
   --color-paper: oklch(0.96 0.018 92);
   --color-paper-2: oklch(0.93 0.025 88);
   --color-ink: oklch(0.26 0.04 50);
-  --color-mute: oklch(0.42 0.03 55);
+  --color-mute: oklch(0.36 0.035 55);
   --color-mark: oklch(0.5 0.15 32);
   --color-mark-deep: oklch(0.4 0.13 32);
   --color-card: oklch(0.985 0.008 95);
   --color-line: oklch(0.84 0.03 80);
   --color-good: oklch(0.38 0.07 145);
   --ease-out-strong: cubic-bezier(0.32, 0.72, 0, 1);
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --z-skip: 100;
 }
 
 html {
@@ -38,7 +42,7 @@ body {
   position: absolute;
   inset-inline-start: 12px;
   top: 12px;
-  z-index: 20;
+  z-index: var(--z-skip);
   transform: translateY(-200%);
 }
 
@@ -52,7 +56,8 @@ body {
   margin-inline: auto;
   min-height: 100dvh;
   padding-block: 1.25rem 2rem;
-  padding-inline: 1.15rem 1.35rem;
+  padding-inline: max(1.15rem, env(safe-area-inset-left)) max(1.35rem, env(safe-area-inset-right));
+  isolation: isolate;
   background-color: oklch(0.975 0.012 95 / 0.96);
   box-shadow: 0 0 0 1px oklch(0.26 0.04 50 / 0.06);
 }
@@ -66,11 +71,22 @@ body {
   background: var(--color-mark);
   opacity: 0.85;
   pointer-events: none;
+  user-select: none;
+}
+
+#main {
+  scroll-margin-top: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 @media (min-width: 40rem) {
   .sheet {
-    padding-inline: 1.5rem 2rem;
+    padding-inline: max(1.5rem, env(safe-area-inset-left)) max(2rem, env(safe-area-inset-right));
   }
 
   .sheet::before {
@@ -93,6 +109,7 @@ body {
   font-family: var(--font-display);
   font-optical-sizing: auto;
   font-variation-settings: "WONK" 1, "SOFT" 40;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
@@ -113,7 +130,8 @@ body {
 .progress b {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
+  font-variant-numeric: tabular-nums;
   color: var(--color-mark);
 }
 
@@ -128,7 +146,9 @@ body {
   background: var(--color-card);
   text-decoration: none;
   color: inherit;
-  transition: background-color 140ms ease, border-color 140ms ease, transform 140ms var(--ease-out-strong);
+  transition-property: background-color, border-color, transform;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out, ease-out, var(--ease-out-strong);
 }
 
 .choice:hover {
@@ -137,11 +157,11 @@ body {
 }
 
 .choice:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
 }
 
 .choice .title {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   font-size: 1.05rem;
 }
 
@@ -163,10 +183,12 @@ body {
   background: var(--color-mark);
   color: var(--color-paper);
   font: inherit;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 140ms ease, transform 140ms var(--ease-out-strong);
+  transition-property: background-color, transform;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out, var(--ease-out-strong);
 }
 
 .btn:hover {
@@ -174,7 +196,11 @@ body {
 }
 
 .btn:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
+}
+
+.btn-copy {
+  min-width: 11.5rem;
 }
 
 .note {
@@ -213,6 +239,34 @@ body {
 
 .link:hover {
   color: var(--color-ink);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.tap {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+}
+
+.nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-inline: 0.2rem;
+  font-weight: var(--font-weight-normal);
+}
+
+.site-foot {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.step-num {
+  font-variant-numeric: tabular-nums;
 }
 
 .nav a[aria-current="page"] {

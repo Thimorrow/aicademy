@@ -19,7 +19,7 @@ export function PasteBlock({ text }: { text: string }) {
     <div className="panel mt-4">
       <p className="text-sm font-bold">Words to paste</p>
       <pre className="paste mt-2">{text}</pre>
-      <button className="btn mt-3" onClick={copy} type="button">
+      <button aria-live="polite" className="btn btn-copy mt-3" onClick={copy} type="button">
         {copied ? "Copied" : "Copy the words"}
       </button>
     </div>

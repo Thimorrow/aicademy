@@ -43,7 +43,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div className="sheet">
           <Header />
           {children}
-          <footer className="quiet mt-16 border-t border-line pt-5 text-sm">
+          <footer className="site-foot quiet mt-16 border-t border-line pt-5 text-sm">
             <p>
               Free plans change. The date on each tool is when we last checked. This is not
               legal advice. No login on this site.

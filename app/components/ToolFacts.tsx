@@ -4,14 +4,16 @@ export function OpenTool({
   name,
   url,
   hint = "Opens a new page.",
+  quiet = false,
 }: {
   name: string
   url: string
   hint?: string
+  quiet?: boolean
 }) {
   return (
     <p>
-      <a className="btn" href={url} rel="noreferrer" target="_blank">
+      <a className={quiet ? "btn btn-quiet" : "btn"} href={url} rel="noreferrer" target="_blank">
         Open {name}
       </a>
       <span className="quiet mt-2 block text-sm">{hint}</span>
@@ -22,9 +24,11 @@ export function OpenTool({
 export function ToolFacts({
   tool,
   showOpen = true,
+  quietOpen = false,
 }: {
   tool: Tool
   showOpen?: boolean
+  quietOpen?: boolean
 }) {
   const deviceLabel =
     tool.devices.length === 2 ? "computer and phone" : tool.devices[0];
@@ -37,7 +41,7 @@ export function ToolFacts({
       {tool.warning ? <p className="note mt-4 text-sm leading-relaxed">{tool.warning}</p> : null}
       {showOpen ? (
         <div className="mt-4">
-          <OpenTool name={tool.name} url={tool.url} />
+          <OpenTool name={tool.name} quiet={quietOpen} url={tool.url} />
         </div>
       ) : null}
       <p className="quiet mt-3 text-sm">

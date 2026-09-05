@@ -363,7 +363,7 @@ export const buildChoices: { id: BuildKind; label: string; hint: string }[] = [
 ];
 
 export const deviceChoices: { id: Device; label: string; hint: string }[] = [
-  { id: "computer", label: "A computer", hint: "A laptop or desktop. You can install things later if you want." },
+  { id: "computer", label: "A computer", hint: "A laptop or desktop. We still start in the browser." },
   { id: "phone", label: "Only my phone", hint: "We will stay in the browser. No install." },
 ];
 

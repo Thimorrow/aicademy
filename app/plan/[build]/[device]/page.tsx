@@ -52,31 +52,31 @@ export default async function PlanPage({
       <h1 className="display mt-2 text-[2.35rem] sm:text-5xl">
         {plan.project.title}
       </h1>
-      <p className="body mt-4 text-lg">{plan.project.whyFun}</p>
+      <p className="body mt-3 text-lg">{plan.project.whyFun}</p>
 
-      <section className="mt-8">
+      <section className="mt-6">
         <h2 className="display text-2xl">Start with {plan.tool.name}</h2>
-        <div className="mt-4">
+        <div className="mt-3">
           <OpenTool
-            hint="Opens a new page. Come back here for the words to paste."
+            hint="Opens a new page. Copy the words below, then paste them there."
             name={plan.tool.name}
             url={plan.tool.url}
           />
         </div>
+        <PasteBlock text={plan.project.paste} />
       </section>
 
       <section className="mt-12">
-        <h2 className="display text-2xl">Do this</h2>
+        <h2 className="display text-2xl">Then</h2>
         <ol className="mt-5 space-y-5">
-          {plan.project.steps.map((step, index) => (
+          {plan.project.steps.slice(2).map((step, index) => (
             <li key={step}>
               <div className="flex gap-4">
                 <span className="step-num display w-7 shrink-0 text-[1.65rem] leading-none text-mark">
-                  {index + 1}
+                  {index + 3}
                 </span>
                 <p className="body">{step}</p>
               </div>
-              {index === 1 ? <PasteBlock text={plan.project.paste} /> : null}
             </li>
           ))}
         </ol>

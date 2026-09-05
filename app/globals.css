@@ -17,16 +17,26 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --z-skip: 100;
+  --elevation-sheet:
+    0 0 0 1px oklch(0.26 0.04 50 / 0.08),
+    0 1px 1px oklch(0.26 0.04 50 / 0.05),
+    0 16px 40px oklch(0.26 0.04 50 / 0.1);
+  --elevation-choice:
+    0 0 0 1px oklch(0.26 0.04 50 / 0.1),
+    0 1px 2px oklch(0.26 0.04 50 / 0.05);
+  --elevation-choice-hover:
+    0 0 0 1px oklch(0.26 0.04 50 / 0.22),
+    0 1px 2px oklch(0.26 0.04 50 / 0.06);
 }
 
 html {
-  background: var(--color-paper);
+  background: var(--color-paper-2);
 }
 
 body {
   min-height: 100dvh;
   color: var(--color-ink);
-  background-color: var(--color-paper);
+  background-color: var(--color-paper-2);
   font-family: var(--font-sans);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
@@ -58,8 +68,8 @@ body {
   padding-block: 1.25rem 2rem;
   padding-inline: max(1.15rem, env(safe-area-inset-left)) max(1.35rem, env(safe-area-inset-right));
   isolation: isolate;
-  background-color: oklch(0.975 0.012 95 / 0.96);
-  box-shadow: 0 0 0 1px oklch(0.26 0.04 50 / 0.06);
+  background-color: oklch(0.985 0.01 95);
+  box-shadow: var(--elevation-sheet);
 }
 
 .sheet::before {
@@ -142,19 +152,20 @@ h3 {
   justify-content: center;
   min-height: 3.25rem;
   padding: 0.9rem 1rem;
-  border: 1px solid var(--color-line);
+  border: 0;
   border-radius: 2px;
   background: var(--color-card);
+  box-shadow: var(--elevation-choice);
   text-decoration: none;
   color: inherit;
-  transition-property: background-color, border-color, transform;
+  transition-property: background-color, box-shadow, transform;
   transition-duration: 150ms;
   transition-timing-function: ease-out, ease-out, var(--ease-out-strong);
 }
 
 .choice:hover {
-  border-color: var(--color-ink);
   background: oklch(1 0.005 95);
+  box-shadow: var(--elevation-choice-hover);
 }
 
 .choice:active {

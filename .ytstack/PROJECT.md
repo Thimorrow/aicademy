@@ -2,23 +2,23 @@
 name: aicademy
 slug: aicademy
 created: 2026-09-05T02:03:20Z
-updated: 2026-09-05T02:03:20Z
+updated: 2026-09-05T11:56:09Z
 ---
 
 # aicademy
 
-**One-liner:** Eine englischsprachige Seite, die jemanden ohne Programmierkenntnisse und ohne Geld von null bis zu seinem ersten selbst gebauten Ding fuehrt, mit kostenlosen KI-Werkzeugen, und die als einzige offenlegt, welche davon Minderjaehrige laut Nutzungsbedingungen gar nicht benutzen duerfen.
+**One-liner:** Eine englischsprachige Seite, die jemanden ohne Programmierkenntnisse und ohne Geld von null bis zu seinem ersten selbst gebauten Ding fuehrt, mit kostenlosen KI-Werkzeugen.
 
 ## What this project is
 
 Eine statische Website mit zwei Zugaengen auf einer gemeinsamen Datenquelle:
 
-1. **Drei Fragen, ein Plan.** Wie alt bist du, was moechtest du bauen, arbeitest du am
-   Computer oder nur am Handy. Daraus entsteht kein Datenblatt, sondern ein konkretes
-   erstes Projekt fuer einen Nachmittag, mit dem Werkzeug, das die Person benutzen darf.
+1. **Zwei Fragen, ein Plan.** Was moechtest du bauen, arbeitest du am Computer oder nur
+   am Handy. Daraus entsteht kein Datenblatt, sondern ein konkretes erstes Projekt fuer
+   einen Nachmittag, mit dem Werkzeug, das dazu passt.
 2. **Die Uebersicht.** Alle empfohlenen Werkzeuge mit Angabe in normalen Worten: was ist
-   gratis und wie viel genau, braucht man ein Zahlungsmittel, ab welchem Alter erlaubt
-   (oder ehrlich "nicht angegeben"), Quelle und Datum der letzten Pruefung.
+   gratis und wie viel genau, braucht man ein Zahlungsmittel, Quelle und Datum der
+   letzten Pruefung.
 
 Dazu fuenf kurze Tipp-Karten, die dort auftauchen, wo man haengenbleibt, nicht als
 getrennte Wissensseite.
@@ -29,21 +29,18 @@ kostenlosem Google-AI-Studio-Schluessel), Stufe 3 optional und ehrlich als schwe
 ausgewiesen (OpenCode, Ollama).
 
 Details, Begruendungen und Quellen: siehe OFFICE-HOURS-aicademy-free-stack.md.
+Alter ist bewusst kein Thema mehr (siehe DECISIONS.md, 2026-09-05).
 
 ## Why it exists
 
-Wer nicht programmieren kann und kein Geld hat, scheitert an drei Dingen gleichzeitig:
-Anleitungen setzen Bezahlung voraus, sie setzen Vorwissen voraus, und sie verschweigen,
-dass Claude und Cursor laut Nutzungsbedingungen unter 18 gar nicht erlaubt sind.
+Wer nicht programmieren kann und kein Geld hat, scheitert an zwei Dingen gleichzeitig:
+Anleitungen setzen Bezahlung voraus, und sie setzen Vorwissen voraus.
 
-Der Grunder hat das selbst erlebt. Auf die Frage, was er stattdessen tat, war die Antwort:
+Der Gruender hat das selbst erlebt. Auf die Frage, was er stattdessen tat, war die Antwort:
 "Kostenlos ging es einfach nicht."
 
-Kein geprueftes Angebot (freeCodeCamp, Scrimba, thevibe-coding.de, Jugend hackt,
-Hacker School) adressiert diese drei Punkte zusammen. Die Altersgrenzen erwaehnt keines.
-
 Es ist ein Portfolio-Projekt, keine Firma. Es soll nicht Geld verdienen, es soll
-funktionieren und zeigen, dass der Grunder ein Problem in ein Produkt uebersetzen kann.
+funktionieren und zeigen, dass der Gruender ein Problem in ein Produkt uebersetzen kann.
 
 ## Success criteria
 
@@ -52,8 +49,8 @@ funktionieren und zeigen, dass der Grunder ein Problem in ein Produkt uebersetze
   Seite schoen ist und niemand etwas baut, ist sie gescheitert.
 - Sprachtest: Jemand, der noch nie Code gesehen hat, liest die Seite und muss kein
   einziges Wort nachschlagen. Abnahmekriterium, keine Stilfrage.
-- Jede Kombination der drei Fragen liefert ein brauchbares Ergebnis, auch die
-  unguenstigste (unter 13, nur Handy). Kein Pfad endet in einer leeren Seite.
+- Jede Kombination der zwei Fragen liefert ein brauchbares Ergebnis, auch nur Handy.
+  Kein Pfad endet in einer leeren Seite.
 - Jeder Plan endet mit einem konkreten Erstprojekt und sagt, woran man merkt, dass es
   geklappt hat. Kein Schritt endet mit "und dann irgendwie weiter".
 - Ein Werkzeug zu aktualisieren kostet genau eine Aenderung an einer Datei.
@@ -61,5 +58,4 @@ funktionieren und zeigen, dass der Grunder ein Problem in ein Produkt uebersetze
 
 ## Current status
 
-Pitch validiert und dokumentiert. ytstack initialisiert. Noch kein Meilenstein,
-kein Code, kein Git-Repo.
+Pitch validiert. M001 geplant (M). Bereit zum Slicen. Noch kein Code.

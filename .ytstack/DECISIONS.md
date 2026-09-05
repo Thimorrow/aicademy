@@ -86,3 +86,29 @@ genau auf Stufe 2. Kilo vor OpenCode, weil es eine sichtbare Oberflaeche hat.
 **Chose:** fuenf Karten, eingebettet an den Stellen, wo man haengenbleibt.
 **Reason:** Inhalte, die nur unter Gratis-Bedingungen zaehlen, gibt es sonst nirgends.
 Ein weiterer Grundlagenkurs waere austauschbar.
+
+## 2026-09-05: Kein Altersfilter, Alter ist egal
+
+**Context:** Der Pitch hatte Alter als Filter und als einziges Unterscheidungsmerkmal
+eingebaut (Frage "Wie alt bist du?", Altersangaben pro Werkzeug, Pfade fuer unter 13).
+Der Gruender hat das vor dem ersten Slice ausdruecklich verworfen: "Alter rausnehmen,
+Alter ist egal."
+**Options considered:** Altersfilter und Altersangaben behalten; Alter komplett aus dem
+Produkt nehmen.
+**Chose:** Alter komplett raus. Keine Altersfrage, keine Altersangaben in der Uebersicht,
+kein Filter nach Nutzungsbedingungen, kein USP "wir sagen dir, was Minderjaehrige nicht
+nutzen duerfen".
+**Reason:** Explizite Anweisung des Gruenders. Der Finder fragt nur noch, was jemand
+bauen will und ob Computer oder Handy. Claude, Cursor und aehnliche Werkzeuge fallen
+weiter raus, weil sie Geld kosten, nicht weil jemand zu jung ist.
+**Supersedes:** Die Folge "Altersfilter darf nicht entfallen" aus
+"2026-09-05: Zielgruppe ist jeder ohne Budget und ohne Programmierkenntnisse".
+
+## 2026-09-05: Next.js, nicht Astro
+
+**Context:** Die Seite ist statisch, kein Backend, kein Login, Ziel Vercel. Offen
+zwischen Astro und Next.js, Entscheidung vor Slice 1 noetig.
+**Options considered:** Astro (weniger Maschine); Next.js.
+**Chose:** Next.js.
+**Reason:** Entscheidung des Gruenders in der Slice-Runde. Kein Backend, keine
+API-Routen in M001. Statische Ausgabe auf Vercel.

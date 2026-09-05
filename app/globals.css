@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-atkinson), ui-sans-serif, sans-serif;
+  --color-paper: oklch(0.965 0.02 92);
+  --color-paper-2: oklch(0.94 0.03 88);
+  --color-ink: oklch(0.28 0.035 52);
+  --color-mute: oklch(0.46 0.03 55);
+  --color-mark: oklch(0.54 0.16 32);
+  --color-mark-deep: oklch(0.42 0.14 32);
+  --color-card: oklch(0.99 0.008 95);
+  --color-line: oklch(0.86 0.025 80);
+  --color-good: oklch(0.45 0.08 145);
+}
+
+html {
+  background: var(--color-paper);
+}
+
+body {
+  min-height: 100dvh;
+  color: var(--color-ink);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, oklch(0.92 0.05 80 / 0.7), transparent 60%),
+    radial-gradient(900px 420px at 110% 8%, oklch(0.9 0.04 40 / 0.45), transparent 55%),
+    var(--color-paper);
+  font-family: var(--font-sans);
+}
+
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: radial-gradient(oklch(0.2 0.02 50) 0.6px, transparent 0.7px);
+  background-size: 3px 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 20;
+  transform: translateY(-200%);
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+}
+
+.choice {
+  min-height: 3.25rem;
+}
+
+.choice:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-mark);
+  outline-offset: 3px;
+}

@@ -1,6 +1,6 @@
 ---
 name: aicademy
-one-liner: Eine englischsprachige Seite, die jemanden ohne Programmierkenntnisse und ohne Geld von null bis zu seinem ersten selbst gebauten Ding fuehrt, mit kostenlosen KI-Werkzeugen, und die als einzige offenlegt, welche davon Minderjaehrige laut Nutzungsbedingungen gar nicht benutzen duerfen.
+one-liner: Eine englischsprachige Seite, die jemanden ohne Programmierkenntnisse und ohne Geld von null bis zu seinem ersten selbst gebauten Ding fuehrt, mit kostenlosen KI-Werkzeugen.
 mode: builder
 date: 2026-09-05
 status: pitch
@@ -16,6 +16,13 @@ Mode: Builder (Portfolio-Projekt, kein Startup)
 Revision: 2 (ersetzt Fassung 1 vom selben Tag, nach zwei Richtungsentscheidungen
 des Grunders: Zielgruppe sind Nicht-Programmierer, Ton und Optik ausdruecklich
 nicht technisch)
+
+## Revision 3 (2026-09-05)
+
+Gruender vor dem ersten Slice: Alter raus, Alter ist egal. Altersfrage, Altersfilter
+und Altersangaben sind kein Produktmerkmal mehr. Dieser Pitch bleibt als historische
+Fassung stehen. Massgeblich sind PROJECT.md und DECISIONS.md
+("2026-09-05: Kein Altersfilter, Alter ist egal").
 
 ## Problem Statement
 

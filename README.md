@@ -2,13 +2,14 @@
 
 Build something real with AI when you have no money, no payment method, and no idea how to code.
 
-Every tutorial out there starts with "get Cursor Pro" or "grab an API key". If you cannot
-pay, you are out by minute two. And nobody mentions that Claude and Cursor do not allow
-anyone under 18 in the first place.
+Answer two questions. Get a first project, a tool you can actually use, and what to do
+when the free pile runs out.
 
-This site answers three questions and hands you a plan: what to use, what to build first,
-and what to do when the free credits run out.
+```bash
+npm install
+npm run dev
+```
 
-**Status:** planning. Nothing is built yet.
+Tool facts live in `data/aicademy.ts`. Change a tool there, nowhere else.
 
-The full design and the reasoning behind it live in `.ytstack/`.
+The design notes live in `.ytstack/`.

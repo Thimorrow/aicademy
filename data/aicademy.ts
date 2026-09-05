@@ -350,6 +350,13 @@ export const tips: Tip[] = [
     body: "Do not say fix it. Say the second sentence is too stiff, and it should sound like a friend. If the next try is worse, ask it to undo the last change only.",
   },
   {
+    id: "broke-game",
+    place: "plan-broke",
+    builds: ["game"],
+    title: "If a wrong answer is marked right, name the question.",
+    body: "Do not say fix it. Say question 3 marks cats as right, and dogs should be right. If the next try is worse, ask it to undo the last change only.",
+  },
+  {
     id: "credits",
     place: "plan-credits",
     title: "If the free pile runs out, do not start from zero.",
